@@ -1,0 +1,41 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateOdersTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('oders', function (Blueprint $table) {
+
+            $table->integer('code_cart');
+            $table->string('name_kh');
+            $table->string('dia_chi');
+            $table->string('phone');
+            $table->string('id');
+            $table->integer('price');
+            $table->integer('so_luong');
+            $table->integer('price_sale');
+            $table->string('thum');
+            $table->double('total');
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('oders');
+    }
+}
